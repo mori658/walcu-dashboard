@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Valutazione Walcu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg:       #0b0e14;
+      --surface:  #13161e;
+      --card:     #1a1f2c;
+      --border:   #252b3b;
+      --accent:   #3b82f6;
+      --accent2:  #f59e0b;
+      --success:  #22c55e;
+      --danger:   #ef4444;
+      --text:     #e2e8f0;
+      --muted:    #64748b;
+      --radius:   10px;
+      --s-high: #22c55e; --s-mid-high: #86efac; --s-mid: #f59e0b; --s-mid-low: #f97316; --s-low: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      font-size: 15px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 62px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 34px; height: 34px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .logo-sub { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 4px; }
+    #last-updated { font-size: 12px; color: var(--muted); }
+
+    /* ── TABS ── */
+    .tab-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      padding: 0 32px;
+      gap: 4px;
+    }
+    .tab-btn {
+      background: none; border: none; cursor: pointer;
+      color: var(--muted);
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 14px 18px;
+      border-bottom: 2px solid transparent;
+      transition: all .2s;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .tab-icon { font-size: 16px; }
+
+    /* ── MAIN ── */
+    main { max-width: 1200px; margin: 0 auto; padding: 32px; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn .2s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+    /* ── TYPOGRAPHY ── */
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px; font-weight: 700; letter-spacing: .3px;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .card-title {
+      font-size: 13px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .6px;
+      color: var(--muted); margin-bottom: 14px;
+    }
+
+    /* ── GRID ── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+
+    /* ── SELECT / CONTROLS ── */
+    .control-row { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+    select, .pill-select button {
+      font-family: 'Barlow', sans-serif;
+    }
+    select {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 16px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      cursor: pointer;
+      outline: none;
+      min-width: 220px;
+    }
+    select:focus { border-color: var(--accent); }
+    .pill-group { display: flex; gap: 6px; flex-wrap: wrap; }
+    .pill-btn {
+      background: var(--card); border: 1px solid var(--border);
+      color: var(--muted); padding: 8px 16px; border-radius: 20px;
+      font-size: 13px; font-weight: 500; cursor: pointer; transition: all .2s;
+    }
+    .pill-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .pill-btn:hover:not(.active) { border-color: var(--accent); color: var(--text); }
+
+    /* ── SCORE BADGE ── */
+    .score-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; border-radius: 8px;
+      font-weight: 700; font-size: 15px; flex-shrink: 0;
+    }
+    /* 0-10 scale: 9-10=green, 7-8=light green, 5-6=amber, 3-4=orange, 0-2=red */
+    .score-high     { background: rgba(34,197,94,.18);   color: #22c55e; }
+    .score-mid-high { background: rgba(134,239,172,.15); color: #86efac; }
+    .score-mid      { background: rgba(245,158,11,.15);  color: #f59e0b; }
+    .score-mid-low  { background: rgba(249,115,22,.15);  color: #f97316; }
+    .score-low      { background: rgba(239,68,68,.15);   color: #ef4444; }
+    .score-null { background: rgba(100,116,139,.1); color: var(--muted); }
+
+    .avg-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 4px 12px; border-radius: 20px;
+      font-weight: 600; font-size: 13px;
+    }
+
+    /* ── QUESTION ROW ── */
+    .q-row {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+    }
+    .q-row:last-child { border-bottom: none; }
+    .q-text { flex: 1; font-size: 14px; line-height: 1.5; }
+    .q-note { font-size: 12px; color: var(--muted); margin-top: 3px; font-style: italic; }
+
+    /* ── TEST CARD (individuale) ── */
+    .test-block {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); margin-bottom: 16px; overflow: hidden;
+    }
+    .test-block-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; border-bottom: 1px solid var(--border);
+      background: rgba(59,130,246,.06);
+    }
+    .test-block-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px; font-weight: 700; letter-spacing: .3px;
+    }
+    .test-block-body { padding: 8px 20px; }
+
+    /* ── SEGNALAZIONI ── */
+    .segnalazione-box {
+      margin-top: 10px; padding: 10px 14px;
+      background: rgba(239,68,68,.07); border-left: 3px solid var(--danger);
+      border-radius: 0 6px 6px 0; font-size: 13px;
+    }
+    .segnalazione-box .label { font-size: 11px; font-weight: 600; color: var(--danger); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 3px; }
+
+    /* ── DISTRIBUTION BAR ── */
+    .distrib { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+    .distrib-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
+    .distrib-fill { height: 100%; border-radius: 5px; transition: width .4s; }
+    .distrib-label { font-size: 12px; color: var(--muted); min-width: 26px; }
+
+    /* ── CHART WRAPPER ── */
+    .chart-wrap { position: relative; }
+
+    /* ── TABLE ── */
+    .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .data-table th { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    .data-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: rgba(59,130,246,.04); }
+
+    /* ── STATS ROW ── */
+    .stats-row { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+    .stat-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 16px 20px; flex: 1; min-width: 130px;
+    }
+    .stat-value { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; line-height: 1; }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    /* ── GROUP CARD ── */
+    .group-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 16px 20px;
+    }
+    .group-name { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+    .group-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 13px; }
+    .group-bar-label { min-width: 110px; color: var(--muted); font-size: 12px; }
+    .group-bar-wrap { flex: 1; background: var(--border); height: 8px; border-radius: 4px; overflow: hidden; }
+    .group-bar-fill { height: 100%; border-radius: 4px; background: var(--accent); }
+    .group-bar-val { min-width: 32px; text-align: right; font-weight: 600; font-size: 13px; }
+
+    /* ── RANK TABLE ── */
+    .rank-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px; font-weight: 700;
+      color: var(--muted); min-width: 32px;
+    }
+    .rank-num.rank-1 { color: #f59e0b; }
+    .rank-num.rank-2 { color: #94a3b8; }
+    .rank-num.rank-3 { color: #b45309; }
+
+    /* ── EMPTY STATE ── */
+    .empty { text-align: center; padding: 60px 20px; color: var(--muted); font-size: 14px; }
+    .empty-icon { font-size: 40px; margin-bottom: 12px; }
+
+    /* ── LOADING ── */
+    #loading {
+      position: fixed; inset: 0; background: var(--bg);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+      z-index: 999; transition: opacity .4s;
+    }
+    .spinner {
+      width: 40px; height: 40px; border: 3px solid var(--border);
+      border-top-color: var(--accent); border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      main { padding: 16px; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      header { padding: 0 16px; }
+      .tab-bar { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="loading">
+  <div class="spinner"></div>
+  <div style="font-size:14px;color:var(--muted)">Caricamento dati…</div>
+</div>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">🚗</div>
+    Dashboard Valutazione Walcu
+    <span class="logo-sub">Rete Vendite</span>
+  </div>
+  <div id="last-updated"></div>
+</header>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('individuale')">
+    <span class="tab-icon">👤</span> Individuale
+  </button>
+  <button class="tab-btn" onclick="switchTab('domande')">
+    <span class="tab-icon">📋</span> Domande
+  </button>
+  <button class="tab-btn" onclick="switchTab('gruppi')">
+    <span class="tab-icon">🏢</span> Gruppi
+  </button>
+</div>
+
+<main>
+
+  <!-- ════════════════ TAB 1: INDIVIDUALE ════════════════ -->
+  <div id="tab-individuale" class="tab-content active">
+    <div class="control-row">
+      <select id="user-select" onchange="renderIndividuale()">
+        <option value="">— Seleziona venditore —</option>
+      </select>
+    </div>
+    <div id="user-content"></div>
+  </div>
+
+  <!-- ════════════════ TAB 2: DOMANDE ════════════════ -->
+  <div id="tab-domande" class="tab-content">
+    <div class="control-row">
+      <div class="pill-group" id="test-pills"></div>
+    </div>
+    <div id="questions-content"></div>
+  </div>
+
+  <!-- ════════════════ TAB 3: GRUPPI ════════════════ -->
+  <div id="tab-gruppi" class="tab-content">
+    <div id="groups-content"></div>
+  </div>
+
+</main>
+
+<script>
+// ─────────────────────────────────────────────
+//  GLOBALS
+// ─────────────────────────────────────────────
+let DATA = null;
+let activeTestId = null;
+const charts = {};
+
+// ─────────────────────────────────────────────
+//  INIT
+// ─────────────────────────────────────────────
+async function init() {
+  try {
+    const res = await fetch('data/data.json?t=' + Date.now());
+    DATA = await res.json();
+  } catch(e) {
+    document.getElementById('loading').innerHTML =
+      '<div style="color:#ef4444;text-align:center;padding:40px">Errore nel caricamento dei dati.<br><small>Assicurarsi che il file data/data.json esista.</small></div>';
+    return;
+  }
+  document.getElementById('loading').style.opacity = '0';
+  setTimeout(() => document.getElementById('loading').style.display = 'none', 400);
+
+  // Last updated
+  if (DATA.last_updated) {
+    const d = new Date(DATA.last_updated);
+    document.getElementById('last-updated').textContent =
+      'Aggiornato: ' + d.toLocaleDateString('it-IT') + ' ' + d.toLocaleTimeString('it-IT', {hour:'2-digit',minute:'2-digit'});
+  }
+
+  buildUserSelect();
+  buildTestPills();
+  renderGruppi();
+}
+
+// ─────────────────────────────────────────────
+//  TAB SWITCH
+// ─────────────────────────────────────────────
+function switchTab(name) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.closest('.tab-btn').classList.add('active');
+}
+
+// ─────────────────────────────────────────────
+//  HELPERS
+// ─────────────────────────────────────────────
+function scoreClass(s) {
+  if (s === null || s === undefined) return 'score-null';
+  if (s >= 9) return 'score-high';
+  if (s >= 7) return 'score-mid-high';
+  if (s >= 5) return 'score-mid';
+  if (s >= 3) return 'score-mid-low';
+  return 'score-low';
+}
+function scoreColor(s) {
+  if (s === null || s === undefined) return '#64748b';
+  if (s >= 9) return '#22c55e';
+  if (s >= 7) return '#86efac';
+  if (s >= 5) return '#f59e0b';
+  if (s >= 3) return '#f97316';
+  return '#ef4444';
+}
+function avgColor(avg) {
+  if (avg === null || avg === undefined) return '#64748b';
+  if (avg >= 9) return '#22c55e';
+  if (avg >= 7) return '#86efac';
+  if (avg >= 5) return '#f59e0b';
+  if (avg >= 3) return '#f97316';
+  return '#ef4444';
+}
+function fmtAvg(arr) {
+  const valid = arr.filter(x => x !== null && x !== undefined);
+  if (!valid.length) return null;
+  return (valid.reduce((a,b) => a+b, 0) / valid.length);
+}
+function fmtNum(n) {
+  return n === null ? '—' : n.toFixed(1);
+}
+function destroyChart(id) {
+  if (charts[id]) { charts[id].destroy(); delete charts[id]; }
+}
+
+// ─────────────────────────────────────────────
+//  TAB 1 – INDIVIDUALE
+// ─────────────────────────────────────────────
+function buildUserSelect() {
+  const sel = document.getElementById('user-select');
+  const users = (DATA.all_users || []).slice().sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase(), 'it'));
+  users.forEach(u => {
+    const opt = document.createElement('option');
+    opt.value = u;
+    opt.textContent = u;
+    sel.appendChild(opt);
+  });
+}
+
+function renderIndividuale() {
+  const user = document.getElementById('user-select').value;
+  const container = document.getElementById('user-content');
+  destroyChart('radar');
+
+  if (!user) {
+    container.innerHTML = '<div class="empty"><div class="empty-icon">👤</div>Seleziona un venditore per vedere i risultati</div>';
+    return;
+  }
+
+  // Find all responses for this user
+  const userData = {};
+  DATA.tests.forEach(test => {
+    const resp = test.responses.find(r =>
+      r.user.toLowerCase().replace(/\s+/g,' ') === user.toLowerCase().replace(/\s+/g,' ')
+    );
+    if (resp) userData[test.id] = { test, resp };
+  });
+
+  const group = DATA.groups[user] || 'Non assegnato';
+  const allScores = Object.values(userData).flatMap(d => d.resp.scores.filter(x => x !== null));
+  const globalAvg = fmtAvg(allScores);
+
+  // Stats row
+  const participationCount = Object.keys(userData).length;
+  let html = `
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-value" style="color:var(--accent)">${participationCount}</div>
+        <div class="stat-label">Test completati</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color:${avgColor(globalAvg)}">${fmtNum(globalAvg)}</div>
+        <div class="stat-label">Media globale</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="font-size:20px;color:var(--muted)">${group}</div>
+        <div class="stat-label">Gruppo</div>
+      </div>
+    </div>
+  `;
+
+  if (!participationCount) {
+    html += '<div class="empty"><div class="empty-icon">📭</div>Nessun dato disponibile per questo venditore</div>';
+    container.innerHTML = html;
+    return;
+  }
+
+  // Test blocks
+  DATA.tests.forEach(test => {
+    const entry = userData[test.id];
+    if (!entry) {
+      html += `<div class="test-block">
+        <div class="test-block-header">
+          <span class="test-block-title">${test.name}</span>
+          <span style="font-size:12px;color:var(--muted)">Non completato</span>
+        </div>
+      </div>`;
+      return;
+    }
+    const { resp } = entry;
+    const avg = fmtAvg(resp.scores);
+    const col = avgColor(avg);
+
+    html += `<div class="test-block">
+      <div class="test-block-header">
+        <span class="test-block-title">${test.name}</span>
+        <span class="avg-badge" style="background:${col}22;color:${col}">
+          Media: ${fmtNum(avg)}
+        </span>
+      </div>
+      <div class="test-block-body">`;
+
+    test.questions.forEach((q, i) => {
+      const s = resp.scores[i];
+      const n = resp.notes[i];
+      html += `<div class="q-row">
+        <div class="score-badge ${scoreClass(s)}">${s !== null ? s : '—'}</div>
+        <div>
+          <div class="q-text">${q}</div>
+          ${n && n.toLowerCase() !== 'no' && n !== '' ? `<div class="q-note">💬 ${n}</div>` : ''}
+        </div>
+      </div>`;
+    });
+
+    if (resp.segnalazioni && resp.segnalazioni.toLowerCase() !== 'no' && resp.segnalazioni !== '') {
+      html += `<div class="segnalazione-box">
+        <div class="label">⚠️ Segnalazione</div>
+        ${resp.segnalazioni}
+      </div>`;
+    }
+    html += `</div></div>`;
+  });
+
+  // Radar / bar chart with all scores
+  html += `<div class="card" style="margin-top:16px">
+    <div class="card-title">Andamento per domanda</div>
+    <div class="chart-wrap" style="max-height:340px">
+      <canvas id="chart-radar"></canvas>
+    </div>
+  </div>`;
+
+  container.innerHTML = html;
+
+  // Build radar datasets
+  const labels = [];
+  const datasets = [];
+  const testColors = ['#3b82f6','#f59e0b','#22c55e'];
+
+  DATA.tests.forEach((test, ti) => {
+    const entry = userData[test.id];
+    if (!entry) return;
+    test.questions.forEach(q => {
+      const short = q.length > 35 ? q.substring(0,33)+'…' : q;
+      if (!labels.includes(short)) labels.push(short);
+    });
+  });
+
+  DATA.tests.forEach((test, ti) => {
+    const entry = userData[test.id];
+    if (!entry) return;
+    const data = test.questions.map((q, i) => entry.resp.scores[i] || 0);
+    datasets.push({
+      label: test.name,
+      data,
+      borderColor: testColors[ti],
+      backgroundColor: testColors[ti] + '22',
+      borderWidth: 2,
+      pointRadius: 4,
+    });
+  });
+
+  const ctx = document.getElementById('chart-radar');
+  if (ctx) {
+    destroyChart('radar');
+    charts['radar'] = new Chart(ctx, {
+      type: 'bar',
+      data: { labels, datasets },
+      options: {
+        responsive: true, maintainAspectRatio: true,
+        plugins: { legend: { labels: { color: '#94a3b8', font: { family: 'Barlow' } } } },
+        scales: {
+          y: { min: 0, max: 10, ticks: { color: '#64748b', stepSize: 2 }, grid: { color: '#1e293b' } },
+          x: { ticks: { color: '#94a3b8', font: { size: 11 } }, grid: { color: '#1e293b' } }
+        }
+      }
+    });
+  }
+}
+
+// ─────────────────────────────────────────────
+//  TAB 2 – DOMANDE
+// ─────────────────────────────────────────────
+function buildTestPills() {
+  const container = document.getElementById('test-pills');
+  DATA.tests.forEach((test, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'pill-btn' + (i === 0 ? ' active' : '');
+    btn.textContent = test.name;
+    btn.onclick = () => {
+      document.querySelectorAll('#test-pills .pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeTestId = test.id;
+      renderDomande();
+    };
+    container.appendChild(btn);
+  });
+  activeTestId = DATA.tests[0]?.id;
+  renderDomande();
+}
+
+function renderDomande() {
+  const test = DATA.tests.find(t => t.id === activeTestId);
+  if (!test) return;
+  const container = document.getElementById('questions-content');
+
+  // Destroy old charts
+  test.questions.forEach((_, i) => destroyChart('distrib-' + i));
+  destroyChart('avg-bar');
+
+  const responses = test.responses;
+  const n = responses.length;
+
+  // Stats row
+  const allScores = responses.flatMap(r => r.scores.filter(x => x !== null));
+  const globalAvg = fmtAvg(allScores);
+
+  let html = `<div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--accent)">${n}</div>
+      <div class="stat-label">Partecipanti</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:${avgColor(globalAvg)}">${fmtNum(globalAvg)}</div>
+      <div class="stat-label">Media generale</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--muted)">${test.questions.length}</div>
+      <div class="stat-label">Domande</div>
+    </div>
+  </div>`;
+
+  if (!n) {
+    html += '<div class="empty"><div class="empty-icon">📭</div>Nessun dato disponibile per questo test</div>';
+    container.innerHTML = html;
+    return;
+  }
+
+  // Per-question cards
+  test.questions.forEach((q, qi) => {
+    const scores = responses.map(r => r.scores[qi]).filter(x => x !== null);
+    const avg = fmtAvg(scores);
+    const col = avgColor(avg);
+
+    // Distribution
+    const dist = {0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0};
+    scores.forEach(s => { if (dist[s] !== undefined) dist[s]++; });
+
+    html += `<div class="card" style="margin-bottom:16px">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px;flex-wrap:wrap">
+        <div>
+          <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Domanda ${qi+1}</div>
+          <div style="font-size:16px;font-weight:500">${q}</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div class="avg-badge" style="background:${col}22;color:${col};font-size:18px;font-family:'Barlow Condensed',sans-serif;font-weight:700;padding:6px 16px;border-radius:10px">${fmtNum(avg)}</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px">${scores.length} risposte</div>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:10px">DISTRIBUZIONE PUNTEGGI</div>
+          ${[
+            {label:'9–10', vals:[9,10], color:'#22c55e'},
+            {label:'7–8',  vals:[7,8],  color:'#86efac'},
+            {label:'5–6',  vals:[5,6],  color:'#f59e0b'},
+            {label:'3–4',  vals:[3,4],  color:'#f97316'},
+            {label:'0–2',  vals:[0,1,2],color:'#ef4444'},
+          ].map(band => {
+            const count = band.vals.reduce((sum,v) => sum + (dist[v]||0), 0);
+            const pct = n > 0 ? (count/n*100) : 0;
+            return `<div class="distrib">
+              <span class="distrib-label" style="color:${band.color};font-weight:600;min-width:38px">${band.label}</span>
+              <div class="distrib-bar"><div class="distrib-fill" style="width:${pct}%;background:${band.color}"></div></div>
+              <span class="distrib-label">${count} <span style="color:var(--muted)">(${Math.round(pct)}%)</span></span>
+            </div>`;
+          }).join('')}
+        </div>
+        <div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:10px">PUNTEGGI PER VENDITORE</div>
+          <div style="max-height:160px;overflow-y:auto">
+            <table class="data-table">
+              <thead><tr><th>Venditore</th><th>Punteggio</th></tr></thead>
+              <tbody>
+                ${responses.sort((a,b) => (b.scores[qi]||0)-(a.scores[qi]||0)).map(r => {
+                  const s = r.scores[qi];
+                  return `<tr>
+                    <td>${r.user}</td>
+                    <td><span class="score-badge ${scoreClass(s)}" style="width:28px;height:28px;font-size:13px">${s !== null ? s : '—'}</span></td>
+                  </tr>`;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  });
+
+  // Avg comparison chart across questions
+  html += `<div class="card" style="margin-top:8px">
+    <div class="card-title">Confronto medie per domanda</div>
+    <div class="chart-wrap" style="max-height:280px">
+      <canvas id="chart-avg-bar"></canvas>
+    </div>
+  </div>`;
+
+  container.innerHTML = html;
+
+  // Build avg bar chart
+  const ctx = document.getElementById('chart-avg-bar');
+  if (ctx) {
+    destroyChart('avg-bar');
+    const avgs = test.questions.map((q, qi) => {
+      const s = test.responses.map(r => r.scores[qi]).filter(x => x !== null);
+      return fmtAvg(s);
+    });
+    charts['avg-bar'] = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: test.questions.map(q => q.length > 40 ? q.substring(0,38)+'…' : q),
+        datasets: [{
+          label: 'Media',
+          data: avgs,
+          backgroundColor: avgs.map(a => avgColor(a) + 'cc'),
+          borderColor: avgs.map(a => avgColor(a)),
+          borderWidth: 1, borderRadius: 6,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { min: 0, max: 5, ticks: { color:'#64748b', stepSize:1 }, grid:{ color:'#1e293b' } },
+          x: { ticks: { color:'#94a3b8', font:{ size:11 } }, grid:{ color:'#1e293b' } }
+        }
+      }
+    });
+  }
+}
+
+// ─────────────────────────────────────────────
+//  TAB 3 – GRUPPI
+// ─────────────────────────────────────────────
+function renderGruppi() {
+  const container = document.getElementById('groups-content');
+  const groups = DATA.all_groups || [];
+
+  // Compute avg per group per test
+  const groupStats = {};
+  groups.forEach(g => {
+    groupStats[g] = { tests: {}, allScores: [] };
+    DATA.tests.forEach(test => {
+      const resps = test.responses.filter(r => r.group === g);
+      const scores = resps.flatMap(r => r.scores.filter(x => x !== null));
+      const avg = fmtAvg(scores);
+      groupStats[g].tests[test.id] = { avg, count: resps.length };
+      if (avg !== null) groupStats[g].allScores.push(avg);
+    });
+    groupStats[g].globalAvg = fmtAvg(groupStats[g].allScores);
+  });
+
+  // Sort groups by global avg desc
+  const sortedGroups = [...groups].sort((a,b) =>
+    (groupStats[b].globalAvg || 0) - (groupStats[a].globalAvg || 0)
+  );
+
+  // Stats
+  const participating = groups.filter(g => groupStats[g].allScores.length > 0).length;
+  let html = `<div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--accent)">${groups.length}</div>
+      <div class="stat-label">Gruppi totali</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--accent2)">${participating}</div>
+      <div class="stat-label">Con dati disponibili</div>
+    </div>
+  </div>`;
+
+  // Ranking table
+  html += `<div class="card" style="margin-bottom:24px">
+    <div class="card-title">🏆 Classifica Gruppi (media globale)</div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Gruppo</th>
+          ${DATA.tests.map(t => `<th>${t.name}</th>`).join('')}
+          <th>Media globale</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${sortedGroups.map((g, i) => {
+          const gs = groupStats[g];
+          const avg = gs.globalAvg;
+          const col = avgColor(avg);
+          return `<tr>
+            <td><span class="rank-num rank-${i+1}">${i+1}</span></td>
+            <td style="font-weight:500">${g}</td>
+            ${DATA.tests.map(t => {
+              const ta = gs.tests[t.id];
+              if (!ta || ta.avg === null) return '<td style="color:var(--muted)">—</td>';
+              return `<td><span class="avg-badge" style="background:${avgColor(ta.avg)}22;color:${avgColor(ta.avg)}">${fmtNum(ta.avg)}</span></td>`;
+            }).join('')}
+            <td>
+              ${avg !== null
+                ? `<span class="avg-badge" style="background:${col}22;color:${col};font-weight:700">${fmtNum(avg)}</span>`
+                : '<span style="color:var(--muted)">—</span>'}
+            </td>
+          </tr>`;
+        }).join('')}
+      </tbody>
+    </table>
+  </div>`;
+
+  // Group detail cards
+  html += `<div style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;margin-bottom:16px">Dettaglio per gruppo</div>`;
+  html += `<div class="grid-2">`;
+  sortedGroups.forEach(g => {
+    const gs = groupStats[g];
+    const avg = gs.globalAvg;
+    const col = avgColor(avg);
+    html += `<div class="group-card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <div class="group-name">${g}</div>
+        ${avg !== null ? `<span class="avg-badge" style="background:${col}22;color:${col};font-size:18px;font-family:'Barlow Condensed',sans-serif;font-weight:700;padding:4px 14px">${fmtNum(avg)}</span>` : ''}
+      </div>
+      ${DATA.tests.map(test => {
+        const ta = gs.tests[test.id];
+        if (!ta || ta.avg === null) return `<div class="group-bar-row"><span class="group-bar-label">${test.name}</span><span style="color:var(--muted);font-size:12px">nessun dato</span></div>`;
+        const pct = (ta.avg / 10 * 100).toFixed(0);
+        return `<div class="group-bar-row">
+          <span class="group-bar-label">${test.name}</span>
+          <div class="group-bar-wrap"><div class="group-bar-fill" style="width:${pct}%;background:${avgColor(ta.avg)}"></div></div>
+          <span class="group-bar-val" style="color:${avgColor(ta.avg)}">${fmtNum(ta.avg)}</span>
+        </div>`;
+      }).join('')}
+      <div style="font-size:11px;color:var(--muted);margin-top:10px;padding-top:10px;border-top:1px solid var(--border)">
+        ${DATA.groups ? (() => {
+          const members = Object.entries(DATA.groups).filter(([u,gr]) => gr === g);
+          return members.length + ' venditori';
+        })() : ''}
+      </div>
+    </div>`;
+  });
+  html += `</div>`;
+
+  // Chart: group avg bars
+  html += `<div class="card" style="margin-top:24px">
+    <div class="card-title">Confronto medie per test</div>
+    <div class="chart-wrap" style="max-height:320px">
+      <canvas id="chart-groups"></canvas>
+    </div>
+  </div>`;
+
+  container.innerHTML = html;
+
+  // Build group chart
+  const ctx = document.getElementById('chart-groups');
+  if (ctx) {
+    destroyChart('groups');
+    const testColors = ['#3b82f6', '#f59e0b', '#22c55e'];
+    charts['groups'] = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: sortedGroups,
+        datasets: DATA.tests.map((test, ti) => ({
+          label: test.name,
+          data: sortedGroups.map(g => {
+            const ta = groupStats[g].tests[test.id];
+            return ta?.avg ?? null;
+          }),
+          backgroundColor: testColors[ti] + 'bb',
+          borderColor: testColors[ti],
+          borderWidth: 1, borderRadius: 4,
+        }))
+      },
+      options: {
+        responsive: true, maintainAspectRatio: true,
+        plugins: { legend: { labels: { color:'#94a3b8', font:{ family:'Barlow' } } } },
+        scales: {
+          y: { min:0, max:10, ticks:{ color:'#64748b', stepSize:2 }, grid:{ color:'#1e293b' } },
+          x: { ticks:{ color:'#94a3b8', font:{ size:11 } }, grid:{ color:'#1e293b' } }
+        }
+      }
+    });
+  }
+}
+
+// ─────────────────────────────────────────────
+//  START
+// ─────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>
