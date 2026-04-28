@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-28T08:52:31Z",
+  "last_updated": "2026-04-28T09:18:01Z",
   "tests": [
     {
       "id": "test1",
@@ -9,23 +9,7 @@
         "Ho la dashboard inserita in agenda",
         "Mi sono creato le non disponibilità della settimana"
       ],
-      "responses": [
-        {
-          "user": "marco mori",
-          "group": "Non assegnato",
-          "scores": [
-            5,
-            5,
-            5
-          ],
-          "notes": [
-            "no",
-            "no",
-            "no"
-          ],
-          "segnalazioni": "è scemo"
-        }
-      ]
+      "responses": []
     },
     {
       "id": "test2",
@@ -35,23 +19,7 @@
         "So fissarmi appt con clienti post preventivi etc",
         "so usare il whatsapp"
       ],
-      "responses": [
-        {
-          "user": "marco mori",
-          "group": "Non assegnato",
-          "scores": [
-            5,
-            5,
-            5
-          ],
-          "notes": [
-            "no",
-            "no",
-            "no"
-          ],
-          "segnalazioni": "no"
-        }
-      ]
+      "responses": []
     },
     {
       "id": "test3",
@@ -60,21 +28,7 @@
         "so filtrare i miei preventivi marca bmw degli ultimi 90 gg",
         "mi sono creato le viste di preventivi e contratti"
       ],
-      "responses": [
-        {
-          "user": "marco mori",
-          "group": "Non assegnato",
-          "scores": [
-            5,
-            5
-          ],
-          "notes": [
-            "no",
-            "no"
-          ],
-          "segnalazioni": "no"
-        }
-      ]
+      "responses": []
     }
   ],
   "groups": {
@@ -124,13 +78,13 @@
     "Luigi Cirillo",
     "Luigi Pecora",
     "Luis Lopez",
+    "marco Furlani",
     "Marco Spallanzani",
     "Mauro Bazzana",
     "Michele Bonetti",
     "Nicholas Palmeri",
     "Paola Coluccia",
     "Vincenzo Bevilacqua",
-    "Yuri Ansaldi",
-    "marco Furlani"
+    "Yuri Ansaldi"
   ]
 }
