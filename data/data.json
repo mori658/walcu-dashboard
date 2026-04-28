@@ -1,0 +1,136 @@
+{
+  "last_updated": "2026-04-28T08:39:35Z",
+  "tests": [
+    {
+      "id": "test1",
+      "name": "Test Walcu n.1",
+      "questions": [
+        "Ho esitato correttamente il mio lead",
+        "Ho la dashboard inserita in agenda",
+        "Mi sono creato le non disponibilità della settimana"
+      ],
+      "responses": [
+        {
+          "user": "marco mori",
+          "group": "Non assegnato",
+          "scores": [
+            5,
+            5,
+            5
+          ],
+          "notes": [
+            "no",
+            "no",
+            "no"
+          ],
+          "segnalazioni": "è scemo"
+        }
+      ]
+    },
+    {
+      "id": "test2",
+      "name": "Test Walcu n.2",
+      "questions": [
+        "So inserire nelle mie trattative il campo fonte",
+        "So fissarmi appt con clienti post preventivi etc",
+        "so usare il whatsapp"
+      ],
+      "responses": [
+        {
+          "user": "marco mori",
+          "group": "Non assegnato",
+          "scores": [
+            5,
+            5,
+            5
+          ],
+          "notes": [
+            "no",
+            "no",
+            "no"
+          ],
+          "segnalazioni": "no"
+        }
+      ]
+    },
+    {
+      "id": "test3",
+      "name": "Test Walcu n.3",
+      "questions": [
+        "so filtrare i miei preventivi marca bmw degli ultimi 90 gg",
+        "mi sono creato le viste di preventivi e contratti"
+      ],
+      "responses": [
+        {
+          "user": "marco mori",
+          "group": "Non assegnato",
+          "scores": [
+            5,
+            5
+          ],
+          "notes": [
+            "no",
+            "no"
+          ],
+          "segnalazioni": "no"
+        }
+      ]
+    }
+  ],
+  "groups": {
+    "Francesco Macchiella": "Usato Mantova",
+    "Alessio Bustini": "Usato Modena",
+    "Francesco Bove": "Usato Mantova",
+    "Luigi Cirillo": "Usato Brescia",
+    "Luis  Lopez": "Usato Brescia",
+    "Mauro Bazzana": "Usato Lonato",
+    "Paola Coluccia": "Arval Parma",
+    "Marco Spallanzani": "Usato Reggio",
+    "Michele Bonetti": "Usato Brescia",
+    "Ester Serafini": "Arval Parma",
+    "Emanuele  Tomasello": "Usato Reggio",
+    "Alfonso  Iannotta": "Usato Modena",
+    "Gianluca  Bergonzini": "Usato Parma",
+    "Antonio Brunato": "Usato Carpi",
+    "Luigi Pecora": "Usato Modena",
+    "Nicholas Palmeri": "Usato Parma",
+    "marco Furlani": "Usato Mantova",
+    "Fabio  Redaelli": "Usato Carpi",
+    "Yuri Ansaldi": "Usato Carpi",
+    "Vincenzo Bevilacqua": "Usato Parma",
+    "Adriano  Manno": "Usato Carpi"
+  },
+  "all_groups": [
+    "Arval Parma",
+    "Usato Brescia",
+    "Usato Carpi",
+    "Usato Lonato",
+    "Usato Mantova",
+    "Usato Modena",
+    "Usato Parma",
+    "Usato Reggio"
+  ],
+  "all_users": [
+    "Adriano  Manno",
+    "Alessio Bustini",
+    "Alfonso  Iannotta",
+    "Antonio Brunato",
+    "Emanuele  Tomasello",
+    "Ester Serafini",
+    "Fabio  Redaelli",
+    "Francesco Bove",
+    "Francesco Macchiella",
+    "Gianluca  Bergonzini",
+    "Luigi Cirillo",
+    "Luigi Pecora",
+    "Luis  Lopez",
+    "Marco Spallanzani",
+    "Mauro Bazzana",
+    "Michele Bonetti",
+    "Nicholas Palmeri",
+    "Paola Coluccia",
+    "Vincenzo Bevilacqua",
+    "Yuri Ansaldi",
+    "marco Furlani"
+  ]
+}
