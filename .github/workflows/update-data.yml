@@ -1,0 +1,41 @@
+name: 🔄 Aggiorna dati Walcu
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Installa dipendenze
+        run: pip install pandas requests openpyxl
+
+      - name: 🚀 Scarica dati da SharePoint
+        run: python scripts/fetch_data.py
+
+      - name: 💾 Commit e push se ci sono modifiche
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/data.json
+          if git diff --staged --quiet; then
+            echo "ℹ️  Nessuna modifica ai dati — skip commit."
+          else
+            git commit -m "🤖 Auto-aggiornamento dati $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
