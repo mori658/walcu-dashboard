@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-29T14:56:53Z",
+  "last_updated": "2026-04-29T15:16:28Z",
   "tests": [
     {
       "id": "test1",
@@ -9,7 +9,23 @@
         "Ho la dashboard inserita in agenda",
         "Mi sono creato le non disponibilità della settimana"
       ],
-      "responses": []
+      "responses": [
+        {
+          "user": "marco Furlani",
+          "group": "Usato Mantova",
+          "scores": [
+            10,
+            7,
+            6
+          ],
+          "notes": [
+            "potrebbe migliorare",
+            "potrebbe migliorare",
+            "potrebbe migliorare"
+          ],
+          "segnalazioni": "potrebbe migliorare"
+        }
+      ]
     },
     {
       "id": "test2",
@@ -19,7 +35,23 @@
         "So fissarmi appt con clienti post preventivi etc",
         "so usare il whatsapp"
       ],
-      "responses": []
+      "responses": [
+        {
+          "user": "marco Furlani",
+          "group": "Usato Mantova",
+          "scores": [
+            2,
+            4,
+            4
+          ],
+          "notes": [
+            "potrebbe migliorare",
+            "potrebbe migliorare",
+            "potrebbe migliorare"
+          ],
+          "segnalazioni": "potrebbe migliorare"
+        }
+      ]
     },
     {
       "id": "test3",
