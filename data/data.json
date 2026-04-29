@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-29T15:16:28Z",
+  "last_updated": "2026-04-29T15:22:54Z",
   "tests": [
     {
       "id": "test1",
@@ -24,6 +24,21 @@
             "potrebbe migliorare"
           ],
           "segnalazioni": "potrebbe migliorare"
+        },
+        {
+          "user": "Michele Bonetti",
+          "group": "Usato Brescia",
+          "scores": [
+            3,
+            3,
+            1
+          ],
+          "notes": [
+            "",
+            "",
+            "è scemo"
+          ],
+          "segnalazioni": "è scemo"
         }
       ]
     },
@@ -50,6 +65,21 @@
             "potrebbe migliorare"
           ],
           "segnalazioni": "potrebbe migliorare"
+        },
+        {
+          "user": "Michele Bonetti",
+          "group": "Usato Brescia",
+          "scores": [
+            1,
+            0,
+            1
+          ],
+          "notes": [
+            "",
+            "è scemo",
+            "è scemo"
+          ],
+          "segnalazioni": "è scemo"
         }
       ]
     },
@@ -73,6 +103,19 @@
             "è bravo"
           ],
           "segnalazioni": "bravo ma non si applica"
+        },
+        {
+          "user": "Michele Bonetti",
+          "group": "Usato Brescia",
+          "scores": [
+            1,
+            1
+          ],
+          "notes": [
+            "è scemo",
+            "è scemo"
+          ],
+          "segnalazioni": "è scemo"
         }
       ]
     }
