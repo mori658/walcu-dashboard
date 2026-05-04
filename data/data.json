@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-04T14:25:25Z",
+  "last_updated": "2026-05-04T15:29:36Z",
   "tests": [
     {
       "id": "test1",
@@ -10,6 +10,21 @@
         "Mi sono creato le non disponibilità della settimana"
       ],
       "responses": [
+        {
+          "user": "Francesco Macchiella",
+          "group": "Usato Mantova",
+          "scores": [
+            7,
+            10,
+            10
+          ],
+          "notes": [
+            "",
+            "",
+            ""
+          ],
+          "segnalazioni": "comatosi"
+        },
         {
           "user": "Luis Lopez",
           "group": "Usato Brescia",
