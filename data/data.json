@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-04T10:18:00Z",
+  "last_updated": "2026-05-04T11:38:08Z",
   "tests": [
     {
       "id": "test1",
@@ -11,34 +11,49 @@
       ],
       "responses": [
         {
-          "user": "marco Furlani",
-          "group": "Usato Mantova",
-          "scores": [
-            10,
-            7,
-            6
-          ],
-          "notes": [
-            "potrebbe migliorare",
-            "potrebbe migliorare",
-            "potrebbe migliorare"
-          ],
-          "segnalazioni": "potrebbe migliorare"
-        },
-        {
-          "user": "Michele Bonetti",
+          "user": "Luis Lopez",
           "group": "Usato Brescia",
           "scores": [
-            3,
-            3,
-            1
+            8,
+            10,
+            0
           ],
           "notes": [
             "",
             "",
-            "è scemo"
+            "lo creiamo insieme in formazione, non lo aveva fatto, e sa farlo!"
           ],
-          "segnalazioni": "è scemo"
+          "segnalazioni": "comatosi"
+        },
+        {
+          "user": "Alessio Bustini",
+          "group": "Usato Modena",
+          "scores": [
+            10,
+            10,
+            10
+          ],
+          "notes": [
+            "",
+            "",
+            ""
+          ],
+          "segnalazioni": "comatosi"
+        },
+        {
+          "user": "Fabio Redaelli",
+          "group": "Usato Carpi",
+          "scores": [
+            6,
+            10,
+            8
+          ],
+          "notes": [
+            "ha alcune attività da esitare ma poche, solo 1 del passato",
+            "",
+            "la formazione no, il giorno di riposo si"
+          ],
+          "segnalazioni": "comatosi"
         }
       ]
     },
