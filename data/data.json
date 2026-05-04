@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-04T14:11:52Z",
+  "last_updated": "2026-05-04T14:25:25Z",
   "tests": [
     {
       "id": "test1",
@@ -65,38 +65,7 @@
         "So fissarmi appt con clienti post preventivi etc",
         "so usare il whatsapp"
       ],
-      "responses": [
-        {
-          "user": "marco Furlani",
-          "group": "Usato Mantova",
-          "scores": [
-            2,
-            4,
-            4
-          ],
-          "notes": [
-            "potrebbe migliorare",
-            "potrebbe migliorare",
-            "potrebbe migliorare"
-          ],
-          "segnalazioni": "potrebbe migliorare"
-        },
-        {
-          "user": "Michele Bonetti",
-          "group": "Usato Brescia",
-          "scores": [
-            1,
-            0,
-            1
-          ],
-          "notes": [
-            "",
-            "è scemo",
-            "è scemo"
-          ],
-          "segnalazioni": "è scemo"
-        }
-      ]
+      "responses": []
     },
     {
       "id": "test3",
@@ -105,34 +74,7 @@
         "so filtrare i miei preventivi marca bmw degli ultimi 90 gg",
         "mi sono creato le viste di preventivi e contratti"
       ],
-      "responses": [
-        {
-          "user": "marco Furlani",
-          "group": "Usato Mantova",
-          "scores": [
-            7,
-            9
-          ],
-          "notes": [
-            "è bravo",
-            "è bravo"
-          ],
-          "segnalazioni": "bravo ma non si applica"
-        },
-        {
-          "user": "Michele Bonetti",
-          "group": "Usato Brescia",
-          "scores": [
-            1,
-            1
-          ],
-          "notes": [
-            "è scemo",
-            "è scemo"
-          ],
-          "segnalazioni": "è scemo"
-        }
-      ]
+      "responses": []
     }
   ],
   "groups": {
