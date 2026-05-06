@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-06T06:33:10Z",
+  "last_updated": "2026-05-06T08:01:34Z",
   "tests": [
     {
       "id": "test1",
@@ -69,6 +69,66 @@
             "la formazione no, il giorno di riposo si"
           ],
           "segnalazioni": "comatosi"
+        },
+        {
+          "user": "marco Furlani",
+          "group": "Usato Mantova",
+          "scores": [
+            4,
+            0,
+            0
+          ],
+          "notes": [
+            "in agenda si lascia attività in pending e app telefonici non gestiti, 10 attività pending",
+            "non la aveva inserita lo facciamo insieme",
+            "lo facciamo insieme"
+          ],
+          "segnalazioni": "bene comatosi, solo a livello numerico"
+        },
+        {
+          "user": "Bonetti Michele",
+          "group": "Non assegnato",
+          "scores": [
+            0,
+            10,
+            0
+          ],
+          "notes": [
+            "ha tante attività in agenda e appuntamenti da gestire, tutti telefonici",
+            "",
+            "inserisce insieme a me la formazione"
+          ],
+          "segnalazioni": "agenda"
+        },
+        {
+          "user": "Luigi Pecora",
+          "group": "Usato Modena",
+          "scores": [
+            7,
+            0,
+            10
+          ],
+          "notes": [
+            "anche comatosi bene, a livello numerico",
+            "lo facciamo insieme",
+            "ha tutto inserito"
+          ],
+          "segnalazioni": "gestione bene"
+        },
+        {
+          "user": "Nicholas Palmeri",
+          "group": "Usato Parma",
+          "scores": [
+            0,
+            3,
+            0
+          ],
+          "notes": [
+            "non gestisce attività dall'agenda, solo dahsboard",
+            "ha dashboard sbagliata",
+            "lo facciamo insieme"
+          ],
+          "segnalazioni": "suggerisco altra formazione per verifica, perchè è superficiale la verifica attuale"
         }
       ]
     },
