@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-06T10:22:52Z",
+  "last_updated": "2026-05-06T12:26:16Z",
   "tests": [
     {
       "id": "test1",
@@ -86,8 +86,8 @@
           "segnalazioni": "bene comatosi, solo a livello numerico"
         },
         {
-          "user": "Bonetti Michele",
-          "group": "Non assegnato",
+          "user": "Michele Bonetti",
+          "group": "Usato Brescia",
           "scores": [
             0,
             10,
@@ -129,6 +129,36 @@
             "lo facciamo insieme"
           ],
           "segnalazioni": "suggerisco altra formazione per verifica, perchè è superficiale la verifica attuale"
+        },
+        {
+          "user": "Marco Spallanzani",
+          "group": "Usato Reggio",
+          "scores": [
+            7,
+            0,
+            7
+          ],
+          "notes": [
+            "abbiamo fatto formazione di recupero, ha tutto in agenda di oggi",
+            "non ce l'ha, lo facciamo insieme",
+            ""
+          ],
+          "segnalazioni": "comatosi"
+        },
+        {
+          "user": "Yuri Ansaldi",
+          "group": "Usato Carpi",
+          "scores": [
+            7,
+            10,
+            3
+          ],
+          "notes": [
+            "",
+            "",
+            "non recupera, formazione non inserita perchè son a pausa pranzo"
+          ],
+          "segnalazioni": "ha poche trattative, quindi è poca la gestione."
         }
       ]
     },
