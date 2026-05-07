@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-07T07:32:33Z",
+  "last_updated": "2026-05-07T09:33:39Z",
   "tests": [
     {
       "id": "test1",
@@ -174,6 +174,81 @@
             "Sempre assente"
           ],
           "segnalazioni": "Sempre assente"
+        },
+        {
+          "user": "Antonio Brunato",
+          "group": "Usato Carpi",
+          "scores": [
+            6,
+            6,
+            0
+          ],
+          "notes": [
+            "",
+            "si ma non la usa",
+            "non si è creato la formazione ne i fuori ufficio"
+          ],
+          "segnalazioni": "comatosi"
+        },
+        {
+          "user": "Alfonso Iannotta",
+          "group": "Usato Modena",
+          "scores": [
+            8,
+            10,
+            10
+          ],
+          "notes": [
+            "solo attività di oggi",
+            "gestisce tutto in modo corretto anche i comatosi",
+            "le inserisce tutte"
+          ],
+          "segnalazioni": "per adesso nessuna \n:)"
+        },
+        {
+          "user": "Ester Serafini",
+          "group": "Arval Parma",
+          "scores": [
+            6,
+            10,
+            10
+          ],
+          "notes": [
+            "ha alcune attività in pending",
+            "",
+            ""
+          ],
+          "segnalazioni": "comatosi appuntamenti solo"
+        },
+        {
+          "user": "Francesco Bove",
+          "group": "Usato Mantova",
+          "scores": [
+            6,
+            0,
+            8
+          ],
+          "notes": [
+            "i telefonici che tiene in trattativa",
+            "entra ogni giorni in kpi e si trova bene, ha tutto pulito",
+            "crea appuntamenti con durata lunga, lo vediamo insieme! ma si inserisce le non disponibilità"
+          ],
+          "segnalazioni": "non particolari mi sembra preciso"
+        },
+        {
+          "user": "Luigi Cirillo",
+          "group": "Usato Brescia",
+          "scores": [
+            7,
+            10,
+            3
+          ],
+          "notes": [
+            "è in pari",
+            "",
+            "ma sa farlo, si crea solo le ferie"
+          ],
+          "segnalazioni": "comatosi stato appuntamento, lamenta che le lead scartate se rientrano non tornano su lui"
         }
       ]
     },
