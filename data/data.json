@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-07T06:40:53Z",
+  "last_updated": "2026-05-07T07:32:33Z",
   "tests": [
     {
       "id": "test1",
@@ -159,6 +159,21 @@
             "non recupera, formazione non inserita perchè son a pausa pranzo"
           ],
           "segnalazioni": "ha poche trattative, quindi è poca la gestione."
+        },
+        {
+          "user": "Mauro Bazzana",
+          "group": "Usato Lonato",
+          "scores": [
+            0,
+            0,
+            0
+          ],
+          "notes": [
+            "Sempre assente",
+            "Sempre assente",
+            "Sempre assente"
+          ],
+          "segnalazioni": "Sempre assente"
         }
       ]
     },
