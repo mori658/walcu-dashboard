@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-07T10:28:29Z",
+  "last_updated": "2026-05-07T14:25:17Z",
   "tests": [
     {
       "id": "test1",
@@ -249,6 +249,21 @@
             "ma sa farlo, si crea solo le ferie"
           ],
           "segnalazioni": "comatosi stato appuntamento, lamenta che le lead scartate se rientrano non tornano su lui"
+        },
+        {
+          "user": "Gianluca Bergonzini",
+          "group": "Usato Parma",
+          "scores": [
+            6,
+            10,
+            8
+          ],
+          "notes": [
+            "ha alcune attività in agenda in pending ma recenti",
+            "",
+            "tutto tranne la formazione"
+          ],
+          "segnalazioni": "comatosi"
         }
       ]
     },
