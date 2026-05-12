@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-12T10:36:33Z",
+  "last_updated": "2026-05-12T14:34:07Z",
   "tests": [
     {
       "id": "test1",
@@ -275,7 +275,53 @@
         "So fissarmi appt con clienti post preventivi etc",
         "so usare il whatsapp"
       ],
-      "responses": []
+      "responses": [
+        {
+          "user": "Fabio Redaelli",
+          "group": "Usato Carpi",
+          "scores": [
+            7,
+            8,
+            5
+          ],
+          "notes": [
+            "",
+            "mi dice che non lo usa, quelli post preventivo. Sa farlo ma non lo sta facendo ad oggi, da monitorare",
+            "non lo usa.. li chiama dal telefono dice.."
+          ],
+          "segnalazioni": "utilizzo e valore"
+        },
+        {
+          "user": "Alessio Bustini",
+          "group": "Usato Modena",
+          "scores": [
+            7,
+            7,
+            7
+          ],
+          "notes": [
+            "non ha molti lead",
+            "si non ha molti app mi dice",
+            "lo usa ogni tanto... molto spot"
+          ],
+          "segnalazioni": "solo il wa, che dice che usa il business principalmente"
+        },
+        {
+          "user": "Francesco Macchiella",
+          "group": "Usato Mantova",
+          "scores": [
+            8,
+            5,
+            0
+          ],
+          "notes": [
+            "",
+            "sa farlo, cade la linea",
+            "non abbiamo avuto modo perchè in condivisione gli cade la linea"
+          ],
+          "segnalazioni": "connessione persa.. lo fa uscire dalla chiamata."
+        }
+      ]
     },
     {
       "id": "test3",
