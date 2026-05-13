@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-13T06:51:23Z",
+  "last_updated": "2026-05-13T10:33:48Z",
   "tests": [
     {
       "id": "test1",
@@ -320,6 +320,141 @@
             "non abbiamo avuto modo perchè in condivisione gli cade la linea"
           ],
           "segnalazioni": "connessione persa.. lo fa uscire dalla chiamata."
+        },
+        {
+          "user": "Michele Bonetti",
+          "group": "Usato Brescia",
+          "scores": [
+            8,
+            7,
+            9
+          ],
+          "notes": [
+            "sta applicandola :) e dice che bene o male la provenienza corrisponde sempre",
+            "sa farlo",
+            "ha iniziato a usarlo"
+          ],
+          "segnalazioni": "non particolari"
+        },
+        {
+          "user": "Luigi Pecora",
+          "group": "Usato Modena",
+          "scores": [
+            8,
+            4,
+            5
+          ],
+          "notes": [
+            "sta andando piano piano ma le inizia a cambiare",
+            "sa farlo, ma li fissa ancora in agenda",
+            "lo usa a volte, farebbe comodo avere template"
+          ],
+          "segnalazioni": "non particolari, solo prenderci la mano"
+        },
+        {
+          "user": "Antonio Brunato",
+          "group": "Usato Carpi",
+          "scores": [
+            9,
+            9,
+            8
+          ],
+          "notes": [
+            "bene, non gli è capitato che non corrispondesse la fonte",
+            "lo fa riferisce",
+            "sa usarlo ma non lo fa"
+          ],
+          "segnalazioni": "non particolari"
+        },
+        {
+          "user": "marco Furlani",
+          "group": "Usato Mantova",
+          "scores": [
+            3,
+            7,
+            8
+          ],
+          "notes": [
+            "si perde un po' e non lo sta facendo, ma ha chiaro come farlo",
+            "ha pochi appuntamenti",
+            "si e lo usa"
+          ],
+          "segnalazioni": "non particolari, solo poche lead da gestire, per il ruolo"
+        },
+        {
+          "user": "Nicholas Palmeri",
+          "group": "Usato Parma",
+          "scores": [
+            8,
+            5,
+            7
+          ],
+          "notes": [
+            "sa farlo",
+            "sa farlo, a volte fa ancora dall'agenda",
+            "si ma non lo usa troppo"
+          ],
+          "segnalazioni": "poco utilizzo, tante attività in sospeso, non si è messo in pari"
+        },
+        {
+          "user": "Marco Spallanzani",
+          "group": "Usato Reggio",
+          "scores": [
+            8,
+            5,
+            8
+          ],
+          "notes": [
+            "sa farlo, ma non lo cambia perchè corrisponde",
+            "non sta ancora creandoli",
+            "lo sta usicchiando.."
+          ],
+          "segnalazioni": "ancora un po' di difficoltà e per tempo non gestisce"
+        },
+        {
+          "user": "Mauro Bazzana",
+          "group": "Usato Lonato",
+          "scores": [
+            3,
+            7,
+            7
+          ],
+          "notes": [
+            "non sapeva farlo, lo vede dal primo della formazione e lo impara",
+            "sa farlo, lo fa",
+            "non lo usa, ma sa usarlo"
+          ],
+          "segnalazioni": "usa poco il whatsapp"
+        },
+        {
+          "user": "Ester Serafini",
+          "group": "Arval Parma",
+          "scores": [
+            0,
+            7,
+            0
+          ],
+          "notes": [
+            "un po' persa su dove inserirlo",
+            "sa farlo, ma non lo fa perchè dice che non riceve lead su walcu",
+            "non lo usa, e mi dice che usa solo il suo"
+          ],
+          "segnalazioni": "dice di usarlo poco, poca manualità.. lead arval da approfondire"
+        },
+        {
+          "user": "Vincenzo Bevilacqua",
+          "group": "Usato Parma",
+          "scores": [
+            8,
+            3,
+            7
+          ],
+          "notes": [
+            "lo fa solo se ha tempo",
+            "non lo fa, ma sa farlo",
+            "usa ancora il suo"
+          ],
+          "segnalazioni": "mi dice che non ha troppo tempo di gestire,"
         }
       ]
     },
