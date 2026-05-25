@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-25T04:12:57Z",
+  "last_updated": "2026-05-25T11:55:53Z",
   "tests": [
     {
       "id": "test1",
@@ -465,7 +465,34 @@
         "so filtrare i miei preventivi marca bmw degli ultimi 90 gg",
         "mi sono creato le viste di preventivi e contratti"
       ],
-      "responses": []
+      "responses": [
+        {
+          "user": "Francesco Macchiella",
+          "group": "Usato Mantova",
+          "scores": [
+            5,
+            9
+          ],
+          "notes": [
+            "va guidato, sotto guida riesce a farlo",
+            "le aveva create, se le è pulite"
+          ],
+          "segnalazioni": "la connessione internet :)))))"
+        },
+        {
+          "user": "Alessio Bustini",
+          "group": "Usato Modena",
+          "scores": [
+            8,
+            9
+          ],
+          "notes": [
+            "si muove bene, abbiamo creato viste diverse perchè è responsabile",
+            "sa farlo bene!"
+          ],
+          "segnalazioni": "non particolari."
+        }
+      ]
     }
   ],
   "groups": {
