@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-27T04:12:02Z",
+  "last_updated": "2026-05-27T11:42:26Z",
   "tests": [
     {
       "id": "test1",
@@ -491,6 +491,110 @@
             "sa farlo bene!"
           ],
           "segnalazioni": "non particolari."
+        },
+        {
+          "user": "Michele Bonetti",
+          "group": "Usato Brescia",
+          "scores": [
+            8,
+            7
+          ],
+          "notes": [
+            "sa usare i filtri ma non so quanto li usi",
+            "dei suoi venditori, insieme"
+          ],
+          "segnalazioni": "hanno 1053 in stato preventivo, mi dice che è per l'assegnazione.. non so se è una scusa (anche perchè Luis è poco agganciato a walcu, solo lui ne ha 800)\n\nfelice per il whatsapp coexistence"
+        },
+        {
+          "user": "marco Furlani",
+          "group": "Usato Mantova",
+          "scores": [
+            6,
+            7
+          ],
+          "notes": [
+            "lo facciamo insieme, dei suoi venditori",
+            "insieme"
+          ],
+          "segnalazioni": "va spinto un pochino, ma saprebbe usarlo.."
+        },
+        {
+          "user": "Luigi Pecora",
+          "group": "Usato Modena",
+          "scores": [
+            3,
+            7
+          ],
+          "notes": [
+            "poco tecnologico, si applica molto e gestisce tutto molto precisamente",
+            "insieme"
+          ],
+          "segnalazioni": "non particolari"
+        },
+        {
+          "user": "Nicholas Palmeri",
+          "group": "Usato Parma",
+          "scores": [
+            6,
+            7
+          ],
+          "notes": [
+            "lo facciamo insieme per i suoi venditori",
+            "insieme"
+          ],
+          "segnalazioni": "hanno 189 preventivi attivi i suoi, non troppi ma numero alto"
+        },
+        {
+          "user": "Luigi Cirillo",
+          "group": "Usato Brescia",
+          "scores": [
+            7,
+            7
+          ],
+          "notes": [
+            "sa farlo, ma non lo usa molto",
+            "si fatto insieme"
+          ],
+          "segnalazioni": "ha 300 trattative aperte senza follow"
+        },
+        {
+          "user": "Marco Spallanzani",
+          "group": "Usato Reggio",
+          "scores": [
+            6,
+            7
+          ],
+          "notes": [
+            "sa farlo con aiuto",
+            "fatto insieme"
+          ],
+          "segnalazioni": "ha 340 preventivi attivi, da chiudere i vecchi"
+        },
+        {
+          "user": "Fabio Redaelli",
+          "group": "Usato Carpi",
+          "scores": [
+            9,
+            7
+          ],
+          "notes": [
+            "sa usarlo bene",
+            "sa farlo e mi sembra incuriosito"
+          ],
+          "segnalazioni": "ci creiamo vista preventivi e lead senza next step, ne ha 139, non trovo sia alto vista la fine mese"
+        },
+        {
+          "user": "Luis Lopez",
+          "group": "Usato Brescia",
+          "scores": [
+            7,
+            8
+          ],
+          "notes": [
+            "sa farlo da solo",
+            "sa farlo bene, spero lo usi"
+          ],
+          "segnalazioni": "spero che lo usi bene, perchè è smart nell'utilizzo.."
         }
       ]
     }
