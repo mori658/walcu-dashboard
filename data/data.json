@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-28T08:09:33Z",
+  "last_updated": "2026-05-28T13:01:49Z",
   "tests": [
     {
       "id": "test1",
@@ -264,6 +264,36 @@
             "tutto tranne la formazione"
           ],
           "segnalazioni": "comatosi"
+        },
+        {
+          "user": "Vincenzo Bevilacqua",
+          "group": "Usato Parma",
+          "scores": [
+            0,
+            0,
+            0
+          ],
+          "notes": [
+            "Assente",
+            "Assente",
+            "Assente"
+          ],
+          "segnalazioni": "Assente"
+        },
+        {
+          "user": "Emanuele Tomasello",
+          "group": "Usato Reggio",
+          "scores": [
+            0,
+            0,
+            0
+          ],
+          "notes": [
+            "Assente",
+            "Assente",
+            "Assente"
+          ],
+          "segnalazioni": "Assente"
         }
       ]
     },
@@ -455,6 +485,111 @@
             "usa ancora il suo"
           ],
           "segnalazioni": "mi dice che non ha troppo tempo di gestire,"
+        },
+        {
+          "user": "Alfonso Iannotta",
+          "group": "Usato Modena",
+          "scores": [
+            8,
+            8,
+            5
+          ],
+          "notes": [
+            "dice che già lo sta aggiornando sulle poche che non corrispondono",
+            "li usa",
+            "usa il proprio"
+          ],
+          "segnalazioni": "si destreggia bene"
+        },
+        {
+          "user": "Luigi Cirillo",
+          "group": "Usato Brescia",
+          "scores": [
+            8,
+            8,
+            5
+          ],
+          "notes": [
+            "le aggiorna nei pochi casi",
+            "si e lo fa, riferisce",
+            "sa farlo ma usa il proprio"
+          ],
+          "segnalazioni": "puntare sul wa"
+        },
+        {
+          "user": "Luis Lopez",
+          "group": "Usato Brescia",
+          "scores": [
+            8,
+            8,
+            8
+          ],
+          "notes": [
+            "dice di starle aggiornando",
+            "sa farlo!",
+            "dice di usarlo ogni tanto"
+          ],
+          "segnalazioni": "sembra che va rapido, e sa gestire il tutto"
+        },
+        {
+          "user": "Gianluca Bergonzini",
+          "group": "Usato Parma",
+          "scores": [
+            8,
+            8,
+            8
+          ],
+          "notes": [
+            "si e lo fa",
+            "si lo fa",
+            "si lo usa"
+          ],
+          "segnalazioni": "non particolari"
+        },
+        {
+          "user": "Yuri Ansaldi",
+          "group": "Usato Carpi",
+          "scores": [
+            0,
+            0,
+            0
+          ],
+          "notes": [
+            "assente",
+            "assente",
+            "assente"
+          ],
+          "segnalazioni": "assente"
+        },
+        {
+          "user": "Francesco Bove",
+          "group": "Usato Mantova",
+          "scores": [
+            0,
+            0,
+            0
+          ],
+          "notes": [
+            "assente",
+            "assente",
+            "assente"
+          ],
+          "segnalazioni": "assente"
+        },
+        {
+          "user": "Emanuele Tomasello",
+          "group": "Usato Reggio",
+          "scores": [
+            0,
+            0,
+            0
+          ],
+          "notes": [
+            "assente",
+            "assente",
+            "assente"
+          ],
+          "segnalazioni": "assente"
         }
       ]
     },
@@ -595,6 +730,110 @@
             "sa farlo bene, spero lo usi"
           ],
           "segnalazioni": "spero che lo usi bene, perchè è smart nell'utilizzo.."
+        },
+        {
+          "user": "Alfonso Iannotta",
+          "group": "Usato Modena",
+          "scores": [
+            7,
+            8
+          ],
+          "notes": [
+            "sa farlo con guida",
+            "preventivi ultimi 30 giorni"
+          ],
+          "segnalazioni": "non particolare, gestisce bene"
+        },
+        {
+          "user": "Vincenzo Bevilacqua",
+          "group": "Usato Parma",
+          "scores": [
+            5,
+            8
+          ],
+          "notes": [
+            "lo facciamo insieme",
+            "lo facciamo insieme"
+          ],
+          "segnalazioni": "non particolari, non ha un numero eccessivo trattative da gestire"
+        },
+        {
+          "user": "Emanuele Tomasello",
+          "group": "Usato Reggio",
+          "scores": [
+            7,
+            7
+          ],
+          "notes": [
+            "sa farlo",
+            "lo facciamo insieme, sa farlo ma non lo usa secondo me. Salviamo solo quella dei preventivi perchè ne ha veramente tanti"
+          ],
+          "segnalazioni": "ha ancora molti comatosi, 1127 preventivi ancora attivi. Necessita pulizia, perchè altrimenti non gestisce bene trattative! ATTENZIONE!"
+        },
+        {
+          "user": "Mauro Bazzana",
+          "group": "Usato Lonato",
+          "scores": [
+            10,
+            9
+          ],
+          "notes": [
+            "vede farlo agli altri e lo fa autonomamente, bravo",
+            "benissimo!"
+          ],
+          "segnalazioni": "bravissimo! esita tutto :)"
+        },
+        {
+          "user": "Yuri Ansaldi",
+          "group": "Usato Carpi",
+          "scores": [
+            0,
+            0
+          ],
+          "notes": [
+            "Assentex2",
+            "Assentex2"
+          ],
+          "segnalazioni": "Assentex2"
+        },
+        {
+          "user": "Gianluca Bergonzini",
+          "group": "Usato Parma",
+          "scores": [
+            0,
+            0
+          ],
+          "notes": [
+            "Assente",
+            "Assente"
+          ],
+          "segnalazioni": "Assente"
+        },
+        {
+          "user": "Francesco Bove",
+          "group": "Usato Mantova",
+          "scores": [
+            0,
+            0
+          ],
+          "notes": [
+            "Assente non ha risposto alla riprogrammazione",
+            "Assente non ha risposto alla riprogrammazione"
+          ],
+          "segnalazioni": "Assente non ha risposto alla riprogrammazione"
+        },
+        {
+          "user": "Antonio Brunato",
+          "group": "Usato Carpi",
+          "scores": [
+            0,
+            0
+          ],
+          "notes": [
+            "Assentex2",
+            "Assentex2"
+          ],
+          "segnalazioni": "Assentex2"
         }
       ]
     }
